@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "SiltaBluetooth"
-  s.version      = "0.1.2"
+  s.version      = "0.1.3"
   s.summary      = "SiltaBluetooth for easy to use BLE."
   s.homepage     = "https://github.com/Giiixx/SiltaBluetooth"
   s.license      = { :type => "MIT", :file => "LICENSE" }
