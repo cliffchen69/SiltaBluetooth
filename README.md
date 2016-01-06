@@ -14,6 +14,8 @@ SiltaBluetooth applies to Bluetooth Low Energy (BLE) App development on Apple iO
 
 Its main feature is to control, monitor, and track any BLE devices or module.
 
+***
+
 ## How to Use
 
 ### Installation
