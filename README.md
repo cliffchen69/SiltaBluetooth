@@ -2,10 +2,10 @@
 
 ##Table of Contents
 
-- [Introduction](#Introduction)
-- [How to Use](#How to Use)
-  - [Installation](#Installation)
-  - [Application](#Application)
+- [Introduction](#introduction)
+- [How to Use](#How-to-Use)
+  - [Installation](#installation)
+  - [Application](#application)
 
 
 ## Introduction
