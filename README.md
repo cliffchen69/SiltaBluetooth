@@ -1,44 +1,50 @@
-# SiltaBluetooth
+# Aengin SiltaBluetooth SDK for Apple iOS
 
-##簡介
+##Table of Contents
 
-SiltaBluetooth適用於IOS之BLE App開發
+- [Introduction](#Introduction)
+- [How to Use](#How to Use)
+  - [Installation](#Installation)
+  - [Application](#Application)
 
-功能:
-提供控制 bluetooth
-提供追蹤藍芽元件運行機制的各種方式
 
-##開始
+##Introduction
 
-**安裝**
+SiltaBluetooth applies to Bluetooth Low Energy (BLE) App development on Apple iOS environment.
 
-一 你可以透過CocoaPods安裝我們的SDK
+Its main feature is to control, monitor, and track any BLE devices or module.
+
+##How to Use
+
+**Installation**
+
+1) You can install our SDK via CocoaPods.
 
 `pod 'SiltaBluetooth', '~> 0.1.4'`
 
-二 你可以直接下載SiltaBluetooth.framework
+2) Or, you can simply download “SiltaBluetooth.framework."
 
 [click me](https://drive.google.com/a/aengin.com/file/d/0Bxf8xz9_np75QzdFajVxM0lLUXM/view?usp=sharing)
 
-**使用SDK**
+**Application**
 
 Swift:
  
- 首先你必須先取得SiltaManager
+ First, you need to have the SiltaManager.
 
  `let silta = SiltaBluetooth.getManager()` 
 
  
- 再來委託SDK
+ Then, delegate the SDK.
 
  `silta?.delegate = self`
 
- 最後Enjoy it
+ You are now ready to get started with App development.
 
 
 ##Library
 
-**封裝單一 BLE 裝置的資訊:**
+**Pack the information of one single BLE device.**
 
     public class Bluetooth : NSObject {
       public var manufacturer: String?
@@ -52,13 +58,13 @@ Swift:
       override public var hash: Int { get }
     }
 
-**Command:**
+**Command**
 
     public enum ICommand {
       case Buzzer
     }
 
-**提供控制 bluetooth 功能:**
+**Functions to control BLE device.**
 
     public protocol ISiltaBluetoothManager : NSObjectProtocol {
       public var delegate: SiltaBluetoothDelegate? { get set } //SiltaBluetoothDelegate
@@ -67,7 +73,7 @@ Swift:
       public func fireCommand(command: SiltaBluetooth.ICommand, ble: SiltaBluetooth.Bluetooth) //傳送指令到 Bluetooth 裝置
     }
 
-**提供追蹤藍芽元件運行機制的各種方式:**
+**Functions to control, monitor, and track any BLE devices or module..**
 
     @objc public protocol SiltaBluetoothDelegate : NSObjectProtocol {
       optional public func bluetoothDeviceListBeenRenewed(bles: [SiltaBluetooth.Bluetooth]) //裝置清單已更新
