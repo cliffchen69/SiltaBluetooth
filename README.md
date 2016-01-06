@@ -38,7 +38,7 @@ Swift:
 
 ##Library
 
-**封裝單一 BLE 裝置的資訊:
+**封裝單一 BLE 裝置的資訊:**
 
     public class Bluetooth : NSObject {
       public var manufacturer: String?
@@ -52,13 +52,13 @@ Swift:
       override public var hash: Int { get }
     }
 
-**Command::
+**Command:**
 
     public enum ICommand {
       case Buzzer
     }
 
-**提供控制 bluetooth 功能:
+**提供控制 bluetooth 功能:**
 
     public protocol ISiltaBluetoothManager : NSObjectProtocol {
       public var delegate: SiltaBluetoothDelegate? { get set } //SiltaBluetoothDelegate
@@ -67,7 +67,7 @@ Swift:
       public func fireCommand(command: SiltaBluetooth.ICommand, ble: SiltaBluetooth.Bluetooth) //傳送指令到 Bluetooth 裝置
     }
 
-**提供追蹤藍芽元件運行機制的各種方式:
+**提供追蹤藍芽元件運行機制的各種方式:**
 
     @objc public protocol SiltaBluetoothDelegate : NSObjectProtocol {
       optional public func bluetoothDeviceListBeenRenewed(bles: [SiltaBluetooth.Bluetooth]) //裝置清單已更新
