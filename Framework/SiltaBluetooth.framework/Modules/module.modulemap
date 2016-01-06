@@ -1,0 +1,10 @@
+framework module SiltaBluetooth {
+  umbrella header "SiltaBluetooth.h"
+
+  export *
+  module * { export * }
+}
+
+module SiltaBluetooth.Swift {
+    header "SiltaBluetooth-Swift.h"
+}
