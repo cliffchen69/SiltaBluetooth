@@ -38,29 +38,19 @@ Swift:
 
 ##Library
 
-**封裝單一 BLE 裝置的資訊**
+封裝單一 BLE 裝置的資訊:
 
-`public class Bluetooth : NSObject {
-
-  public var manufacturer: String?
-
-  public var UUID: String?
-
-  public var powerLevel: NSNumber?
-
-  public var RSSI: NSNumber?
-
-  public var name: String?
-
-  public var live: Bool!
-
-  public func accuracy() -> Int
-
-  override public func isEqual(object: AnyObject?) -> Bool
-
-  override public var hash: Int { get }
-
-}`
+    public class Bluetooth : NSObject {
+      public var manufacturer: String?
+      public var UUID: String?
+      public var powerLevel: NSNumber?
+      public var RSSI: NSNumber?
+      public var name: String?
+      public var live: Bool!
+      public func accuracy() -> Int
+      override public func isEqual(object: AnyObject?) -> Bool
+      override public var hash: Int { get }
+    }
 
 **Command**
 
