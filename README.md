@@ -20,7 +20,7 @@ Its main feature is to control, monitor, and track any BLE devices or module.
 
 1) You can install our SDK via CocoaPods.
 
-`pod 'SiltaBluetooth', '~> 0.1.4'`
+`pod 'SiltaBluetooth', '~> 0.1.5'`
 
 2) Or, you can simply download “SiltaBluetooth.framework."
 
