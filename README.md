@@ -8,15 +8,15 @@
   - [Application](#Application)
 
 
-##Introduction
+## Introduction
 
 SiltaBluetooth applies to Bluetooth Low Energy (BLE) App development on Apple iOS environment.
 
 Its main feature is to control, monitor, and track any BLE devices or module.
 
-##How to Use
+## How to Use
 
-**Installation**
+### Installation
 
 1) You can install our SDK via CocoaPods.
 
@@ -26,7 +26,7 @@ Its main feature is to control, monitor, and track any BLE devices or module.
 
 [click me](https://drive.google.com/a/aengin.com/file/d/0Bxf8xz9_np75QzdFajVxM0lLUXM/view?usp=sharing)
 
-**Application**
+### Application
 
 Swift:
  
