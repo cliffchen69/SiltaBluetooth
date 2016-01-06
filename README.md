@@ -38,7 +38,7 @@ Swift:
 
 ##Library
 
-封裝單一 BLE 裝置的資訊:
+**封裝單一 BLE 裝置的資訊:
 
     public class Bluetooth : NSObject {
       public var manufacturer: String?
@@ -52,43 +52,29 @@ Swift:
       override public var hash: Int { get }
     }
 
-**Command**
+**Command::
 
-`public enum ICommand {
+    public enum ICommand {
+      case Buzzer
+    }
 
-  case Buzzer
+**提供控制 bluetooth 功能:
 
-}`
+    public protocol ISiltaBluetoothManager : NSObjectProtocol {
+      public var delegate: SiltaBluetoothDelegate? { get set } //SiltaBluetoothDelegate
+      public func start() //啟動 bluetooth 掃瞄機制
+      public func stop() //停止 bluetooth 掃瞄機制
+      public func fireCommand(command: SiltaBluetooth.ICommand, ble: SiltaBluetooth.Bluetooth) //傳送指令到 Bluetooth 裝置
+    }
 
-**提供控制 bluetooth 功能**
+**提供追蹤藍芽元件運行機制的各種方式:
 
-`public protocol ISiltaBluetoothManager : NSObjectProtocol {
-
-  public var delegate: SiltaBluetoothDelegate? { get set } //SiltaBluetoothDelegate
-
-  public func start() //啟動 bluetooth 掃瞄機制
-
-  public func stop() //停止 bluetooth 掃瞄機制
-
-  public func fireCommand(command: SiltaBluetooth.ICommand, ble: SiltaBluetooth.Bluetooth) //傳送指令到 Bluetooth 裝置
-
-}`
-
-**提供追蹤藍芽元件運行機制的各種方式**
-
-`@objc public protocol SiltaBluetoothDelegate : NSObjectProtocol {
-
-  optional public func bluetoothDeviceListBeenRenewed(bles: [SiltaBluetooth.Bluetooth]) //裝置清單已更新
-
-  optional public func bluetoothExecuteCommandSuccess(ble: SiltaBluetooth.Bluetooth) //指令執行成功
-
-  optional public func bluetoothExecuteCommandFailure(ble: SiltaBluetooth.Bluetooth)
-
-  optional public func bluetoothDisabled() //藍芽裝置未開啟
-
-  optional public func bluetoothUnauthorized() //藍芽裝置未授權使用
-
-  optional public func bluetoothUnsupported() //裝置上無藍芽裝置
-
-}`
+    @objc public protocol SiltaBluetoothDelegate : NSObjectProtocol {
+      optional public func bluetoothDeviceListBeenRenewed(bles: [SiltaBluetooth.Bluetooth]) //裝置清單已更新
+      optional public func bluetoothExecuteCommandSuccess(ble: SiltaBluetooth.Bluetooth) //指令執行成功
+      optional public func bluetoothExecuteCommandFailure(ble: SiltaBluetooth.Bluetooth)
+      optional public func bluetoothDisabled() //藍芽裝置未開啟
+      optional public func bluetoothUnauthorized() //藍芽裝置未授權使用
+      optional public func bluetoothUnsupported() //裝置上無藍芽裝置
+    }
 
