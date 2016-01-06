@@ -1,4 +1,4 @@
-# SiltaBluetooth
+# Aengin SiltaBluetooth SDK for Apple iOS
 
 ##簡介
 
