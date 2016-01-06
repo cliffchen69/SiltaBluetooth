@@ -8,7 +8,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios
   s.ios.deployment_target = '8.0'
   s.source       = { :git => "https://github.com/Giiixx/SiltaBluetooth.git", :tag => "#{s.version}" }
-  s.ios.preserve_paths  = 'SiltaBluetooth/*.framework'
+  s.ios.preserve_paths  = 'SiltaBluetooth/*.{framework}'
   s.ios.vendored_frameworks = 'SiltaBluetooth/SiltaBluetooth.framework'
   s.ios.resource = 'SiltaBluetooth/SiltaBluetooth.framework'
   s.ios.xcconfig = { 'LD_RUNPATH_SEARCH_PATHS' => '"$(PODS_ROOT)/SiltaBluetooth"' }
