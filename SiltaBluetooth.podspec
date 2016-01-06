@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name         = "SiltaBluetooth"
-  s.version      = "0.1.4"
+  s.version      = "0.1.5"
   s.summary      = "SiltaBluetooth for easy to use BLE."
-  s.homepage     = "https://github.com/Giiixx/SiltaBluetooth"
-  s.license      = { :type => "MIT", :file => "LICENSE" }
+  s.homepage     = "https://github.com/Aengininc/SiltaBluetooth"
+  s.license      = { :type => "Aengin inc", :file => "LICENSE" }
   s.author       = { "Cliff" => "cliffchem@aengin.com" }
   s.platform     = :ios
   s.ios.deployment_target = '8.0'
