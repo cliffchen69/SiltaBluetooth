@@ -68,19 +68,19 @@ Swift:
 
     public protocol ISiltaBluetoothManager : NSObjectProtocol {
       public var delegate: SiltaBluetoothDelegate? { get set } //SiltaBluetoothDelegate
-      public func start() //啟動 bluetooth 掃瞄機制
-      public func stop() //停止 bluetooth 掃瞄機制
-      public func fireCommand(command: SiltaBluetooth.ICommand, ble: SiltaBluetooth.Bluetooth) //傳送指令到 Bluetooth 裝置
+      public func start() //Enable the bluetooth scanning.
+      public func stop() //Stop scanning.
+      public func fireCommand(command: SiltaBluetooth.ICommand, ble: SiltaBluetooth.Bluetooth) //Give commands to Bluetooth devices.
     }
 
 **Functions to control, monitor, and track any BLE devices or module..**
 
     @objc public protocol SiltaBluetoothDelegate : NSObjectProtocol {
-      optional public func bluetoothDeviceListBeenRenewed(bles: [SiltaBluetooth.Bluetooth]) //裝置清單已更新
-      optional public func bluetoothExecuteCommandSuccess(ble: SiltaBluetooth.Bluetooth) //指令執行成功
+      optional public func bluetoothDeviceListBeenRenewed(bles: [SiltaBluetooth.Bluetooth]) //Device list updated.
+      optional public func bluetoothExecuteCommandSuccess(ble: SiltaBluetooth.Bluetooth) //Commands executed successfully.
       optional public func bluetoothExecuteCommandFailure(ble: SiltaBluetooth.Bluetooth)
-      optional public func bluetoothDisabled() //藍芽裝置未開啟
-      optional public func bluetoothUnauthorized() //藍芽裝置未授權使用
-      optional public func bluetoothUnsupported() //裝置上無藍芽裝置
+      optional public func bluetoothDisabled() //BLE devices not enabled.
+      optional public func bluetoothUnauthorized() //BLE devices not authorized to use.
+      optional public func bluetoothUnsupported() //No BLE devices connected.
     }
 
