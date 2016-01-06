@@ -47,6 +47,7 @@ Swift:
 **Pack the information of one single BLE device.**
 
     public class Bluetooth : NSObject {
+     
       public var manufacturer: String?
       public var UUID: String?
       public var powerLevel: NSNumber?
@@ -61,12 +62,14 @@ Swift:
 **Command**
 
     public enum ICommand {
+     
       case Buzzer
     }
 
 **Functions to control BLE device.**
 
     public protocol ISiltaBluetoothManager : NSObjectProtocol {
+     
       public var delegate: SiltaBluetoothDelegate? { get set } //SiltaBluetoothDelegate
       public func start() //Enable the bluetooth scanning.
       public func stop() //Stop scanning.
@@ -76,6 +79,7 @@ Swift:
 **Functions to control, monitor, and track any BLE devices or module..**
 
     @objc public protocol SiltaBluetoothDelegate : NSObjectProtocol {
+     
       optional public func bluetoothDeviceListBeenRenewed(bles: [SiltaBluetooth.Bluetooth]) //Device list updated.
       optional public func bluetoothExecuteCommandSuccess(ble: SiltaBluetooth.Bluetooth) //Commands executed successfully.
       optional public func bluetoothExecuteCommandFailure(ble: SiltaBluetooth.Bluetooth)
