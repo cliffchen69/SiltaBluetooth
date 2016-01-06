@@ -1,46 +1,53 @@
 # Aengin SiltaBluetooth SDK for Apple iOS
 
-##簡介
+##Table of Contents
 
-SiltaBluetooth適用於IOS之BLE App開發
+- [Introduction](#Introduction)
+- [How to Use](#How to Use)
+  - [Installation](#Installation)
+  - [Application](#Application)
 
-功能:
-提供控制 bluetooth
-提供追蹤藍芽元件運行機制的各種方式
 
-##開始
+##Introduction
 
-**安裝**
+SiltaBluetooth applies to Bluetooth Low Energy (BLE) App development on Apple iOS environment.
 
-一 你可以透過CocoaPods安裝我們的SDK
+Its main feature is to control, monitor, and track any BLE devices or module.
 
-`pod 'SiltaBluetooth', '~> 0.1.4'`
+##How to Use
 
-二 你可以直接下載SiltaBluetooth.framework
+**Installation**
+
+1) You can install our SDK via CocoaPods.
+
+`pod 'SiltaBluetooth', '~> 0.1.5'`
+
+2) Or, you can simply download “SiltaBluetooth.framework."
 
 [click me](https://drive.google.com/a/aengin.com/file/d/0Bxf8xz9_np75QzdFajVxM0lLUXM/view?usp=sharing)
 
-**使用SDK**
+**Application**
 
 Swift:
  
- 首先你必須先取得SiltaManager
+ First, you need to have the SiltaManager.
 
  `let silta = SiltaBluetooth.getManager()` 
 
  
- 再來委託SDK
+ Then, delegate the SDK.
 
  `silta?.delegate = self`
 
- 最後Enjoy it
+ You are now ready to get started with App development.
 
 
 ##Library
 
-**封裝單一 BLE 裝置的資訊:
+**Pack the information of one single BLE device.**
 
     public class Bluetooth : NSObject {
+     
       public var manufacturer: String?
       public var UUID: String?
       public var powerLevel: NSNumber?
@@ -52,29 +59,32 @@ Swift:
       override public var hash: Int { get }
     }
 
-**Command::
+**Command**
 
     public enum ICommand {
+     
       case Buzzer
     }
 
-**提供控制 bluetooth 功能:
+**Functions to control BLE device.**
 
     public protocol ISiltaBluetoothManager : NSObjectProtocol {
+     
       public var delegate: SiltaBluetoothDelegate? { get set } //SiltaBluetoothDelegate
-      public func start() //啟動 bluetooth 掃瞄機制
-      public func stop() //停止 bluetooth 掃瞄機制
-      public func fireCommand(command: SiltaBluetooth.ICommand, ble: SiltaBluetooth.Bluetooth) //傳送指令到 Bluetooth 裝置
+      public func start() //Enable the bluetooth scanning.
+      public func stop() //Stop scanning.
+      public func fireCommand(command: SiltaBluetooth.ICommand, ble: SiltaBluetooth.Bluetooth) //Give commands to Bluetooth devices.
     }
 
-**提供追蹤藍芽元件運行機制的各種方式:
+**Functions to control, monitor, and track any BLE devices or module..**
 
     @objc public protocol SiltaBluetoothDelegate : NSObjectProtocol {
-      optional public func bluetoothDeviceListBeenRenewed(bles: [SiltaBluetooth.Bluetooth]) //裝置清單已更新
-      optional public func bluetoothExecuteCommandSuccess(ble: SiltaBluetooth.Bluetooth) //指令執行成功
+     
+      optional public func bluetoothDeviceListBeenRenewed(bles: [SiltaBluetooth.Bluetooth]) //Device list updated.
+      optional public func bluetoothExecuteCommandSuccess(ble: SiltaBluetooth.Bluetooth) //Commands executed successfully.
       optional public func bluetoothExecuteCommandFailure(ble: SiltaBluetooth.Bluetooth)
-      optional public func bluetoothDisabled() //藍芽裝置未開啟
-      optional public func bluetoothUnauthorized() //藍芽裝置未授權使用
-      optional public func bluetoothUnsupported() //裝置上無藍芽裝置
+      optional public func bluetoothDisabled() //BLE devices not enabled.
+      optional public func bluetoothUnauthorized() //BLE devices not authorized to use.
+      optional public func bluetoothUnsupported() //No BLE devices connected.
     }
 
