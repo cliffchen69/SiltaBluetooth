@@ -18,6 +18,9 @@ Its main feature is to control, monitor, and track any BLE devices or module.
 
 ## How to Use
 
+### Before Installation
+Availability IOS (8.0 and later)
+
 ### Installation
 
 1) You can install our SDK via CocoaPods.
